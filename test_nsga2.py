@@ -1,13 +1,28 @@
 '''
-Created on 10/01/2011
+@summary: Implementation of the NSGA-II algorithm in Python.
+@version: 1.0
+@since: 2011-01-10
+@author: Marcelo Pita, http://marcelopita.wordpress.com
+@contact: marcelo.souza.pita <at> gmail.com
+@copyright: Copyright 2011 Marcelo Pita
+@license:
 
-@author: 04610922479
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 '''
 import random, math
 from nsga2 import Solution
 from nsga2 import NSGAII
-
-#from nsga2.nsga2 import Solution
 
 class T1Solution(Solution):
     '''
@@ -68,7 +83,7 @@ if __name__ == '__main__':
     
     nsga2.run(P, 50, 20)
     
-    csv_file = open('/tmp/nsga2_out.csv', 'w')
+    csv_file = open('nsga2_out.csv', 'w')
     
     for i in range(len(P)):
         csv_file.write("" + str(P[i].objectives[0]) + ", " + str(P[i].objectives[1]) + "\n")
